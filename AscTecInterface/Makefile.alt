@@ -1,0 +1,29 @@
+OS_SHLIBFLAG = -shared
+ifeq ($(shell uname),Darwin)
+	OS_SHLIBFLAG = -dynamiclib
+endif
+
+prefix = .
+libdir = $(prefix)/lib
+
+OPT = -O2
+CPPFLAGS = -Wall $(OPT) -I./include/ -fPIC
+LDFLAGS = $(OS_SHLIBFLAG)
+
+.phony: install clean all asctecinterface
+
+all: asctecinterface
+
+asctecinterface: src/AscTecInterface.o
+	$(CXX) $(CPPFLAGS) $(LDFLAGS) -o lib$@.so $^ $(LDLIBS)
+	ar -r lib$@.a $^
+	ranlib lib$@.a
+	mkdir -p $(libdir)
+	mv lib$@.so $(libdir)
+	mv lib$@.a $(libdir)
+
+clean:
+	rm -fr *.o src/*.o lib
+	rm -f *~ src/*~ include/*~
+	rm -f *.a *.so 
+

@@ -1,0 +1,8 @@
+Writing to .bin and .txt
+Starting the State Machine Controller
+Quadrotor 1 starting State 1 using controller xyz_hover
+
+Quadrotor 1 finished State 1 completed by ec_timer(1)
+[state_time = 1.1107, total_time=1.6320]  
+Quadrotor 1 moving to state 2
+

@@ -1,0 +1,20 @@
+<package>
+  <description brief="ipc_asctec_msgs">
+
+     ipc_asctec_msgs
+
+  </description>
+  <author>Not Sure...  Probably Nathan Michael</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+
+  <depend package="asctec"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/include"/>
+  </export>
+
+</package>
+
+

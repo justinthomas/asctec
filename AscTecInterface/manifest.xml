@@ -1,0 +1,19 @@
+<package>
+  <description brief="AscTecInterface">
+
+     AscTecInterface
+
+  </description>
+  <author>Nathan Michael</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/AscTecInterface</url>
+
+  <depend package="roscpp"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lasctecinterface"/>
+  </export>
+</package>
+
+

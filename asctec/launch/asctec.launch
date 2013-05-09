@@ -1,0 +1,18 @@
+<launch>
+  <node pkg="asctec"
+        name="asctec"
+        type="asctec"
+        output="screen">
+    <param name="port" value="/dev/cu.usbserial-A800ctKf"/>
+    <param name="port_rate" value="230400" type="int"/>
+  </node>
+<!--
+  <node pkg="ipc_bridge_ros"
+        name="asctec_HWCmd_subscriber"
+        type="asctec_HWCmd_subscriber"
+        output="screen">
+    <remap from="~cmd_hw" to="/asctec/cmd_hw"/>
+    <param name="message" value="cmd_hw"/>
+  </node>
+-->
+</launch>
