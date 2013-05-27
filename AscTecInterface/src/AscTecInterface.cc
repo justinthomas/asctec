@@ -391,7 +391,8 @@ inline double AscTec::RadToDeg(double rad)
 
 void AscTec::Update(double timeout_ms)
 {
-  char c;
+  int i;
+  char c[100];
   int nchars, ret;
 
   double dt = 0;
@@ -399,11 +400,12 @@ void AscTec::Update(double timeout_ms)
   double trec;
   do
     {
-      nchars = sd.ReadChars(&c, 1, 4e2);
+      nchars = sd.ReadChars(c, 100, 1e3);
       
-      if (nchars > 0)
+      //if (nchars > 0)
+      for(i=0; i < nchars; i++)
         {
-          ret = AscTecPacketProcessChar(c, &packet);
+          ret = AscTecPacketProcessChar(c[i], &packet);
           
           if (ret > 0)
             {
