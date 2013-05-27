@@ -33,6 +33,8 @@
 */
 
 #include "SerialDevice.hh"
+#include <stdlib.h>
+#include <unistd.h>
 
 //constructor
 SerialDevice::SerialDevice()
